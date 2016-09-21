@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Watch Image</string>
+    <string name="tab_home">Home</string>
+    <string name="tab_categories">categories</string>
+    <string name="tab_favourites">favourites</string>
+
+
+    <string-array name="media_names">
+        <item>Big Buck Bunny</item>
+        <item>Elephants Dream</item>
+        <item>Sintel</item>
+        <item>Tears of Steel</item>
+    </string-array>
+</resources>
