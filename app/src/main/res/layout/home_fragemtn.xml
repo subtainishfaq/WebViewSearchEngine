@@ -5,6 +5,12 @@
     android:background="@drawable/texture"
     tools:context="info.androidhive.materialtabs.fragments.OneFragment">
 
-
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Tab 2"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
 
 </RelativeLayout>
