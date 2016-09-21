@@ -4,12 +4,11 @@ package com.example.subtainishfaq.searchengine.fragments;
 
         import android.os.Bundle;
         import android.support.v4.app.Fragment;
+        import android.view.KeyEvent;
         import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
         import android.widget.Button;
-
-
         import com.example.subtainishfaq.searchengine.Home;
         import com.example.subtainishfaq.searchengine.R;
 
@@ -36,6 +35,18 @@ public class HomeFragment extends Fragment  {
 
         Button Google= (Button) v.findViewById(R.id.Google);
         Button Bing= (Button) v.findViewById(R.id.Bing);
+
+        v.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_BACK) {
+                    ((Home) getActivity()).onBackPressed();
+                    return true;
+                }
+                return false;
+                //
+            }
+        });
 
         Google.setOnClickListener(new View.OnClickListener() {
             @Override

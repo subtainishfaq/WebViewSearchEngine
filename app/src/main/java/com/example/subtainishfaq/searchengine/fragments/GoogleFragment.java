@@ -9,6 +9,8 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.example.subtainishfaq.searchengine.Home;
 import com.example.subtainishfaq.searchengine.R;
@@ -17,8 +19,7 @@ import com.example.subtainishfaq.searchengine.R;
 public class GoogleFragment extends Fragment {
 
 
-
-
+    private WebView webView;
 
     public GoogleFragment() {
         // Required empty public constructor
@@ -48,6 +49,12 @@ public class GoogleFragment extends Fragment {
                 //
             }
         });
+
+
+        webView = (WebView) v.findViewById(R.id.webViewGoogle);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebViewClient(new WebViewClient());
+        webView.loadUrl("http://www.google.com");
         return v;
     }
 

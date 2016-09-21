@@ -9,6 +9,8 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.example.subtainishfaq.searchengine.Home;
 import com.example.subtainishfaq.searchengine.R;
@@ -21,6 +23,7 @@ public class BingFragment extends Fragment {
 
 
      SweetAlertDialog pDialog;
+    private WebView webView;
 
     public BingFragment() {
         // Required empty public constructor
@@ -51,6 +54,10 @@ public class BingFragment extends Fragment {
             }
         });
 
+        webView = (WebView) v.findViewById(R.id.webViewBing);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebViewClient(new WebViewClient());
+        webView.loadUrl("http://www.bing.com");
 
         return v;
     }
