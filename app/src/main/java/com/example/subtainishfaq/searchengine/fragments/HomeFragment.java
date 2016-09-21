@@ -7,8 +7,10 @@ package com.example.subtainishfaq.searchengine.fragments;
         import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
+        import android.widget.Button;
 
 
+        import com.example.subtainishfaq.searchengine.Home;
         import com.example.subtainishfaq.searchengine.R;
 
 
@@ -31,6 +33,24 @@ public class HomeFragment extends Fragment  {
         // Inflate the layout for this fragment
 
          View   v = inflater.inflate(R.layout.home_fragemtn, container, false);
+
+        Button Google= (Button) v.findViewById(R.id.Google);
+        Button Bing= (Button) v.findViewById(R.id.Bing);
+
+        Google.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ( (Home) getActivity()).setFragmentId(1);
+
+            }
+        });
+        Bing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                ((Home) getActivity()).setFragmentId(2);
+            }
+        });
         /* task =  new RetrieveFeedTask();
             task.execute();*/
 

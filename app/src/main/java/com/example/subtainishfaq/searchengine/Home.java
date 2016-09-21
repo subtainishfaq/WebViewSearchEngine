@@ -52,25 +52,14 @@ public class Home extends AppCompatActivity {
 
 
 
-         toolbar = (Toolbar) findViewById(R.id.toolbarhomeid);
 
-         setSupportActionBar(toolbar);
 
-         ActionBar ab =getSupportActionBar();
-         ab.setDisplayShowHomeEnabled(true); // show or hide the default home button
-         ab.setDisplayHomeAsUpEnabled(true);
-         ab.setDisplayShowCustomEnabled(true); // enable overriding the default toolbar layout
-         ab.setDisplayShowTitleEnabled(false);
-         ab.setHideOnContentScrollEnabled(false);//
 
-          tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-         tabLayout.addTab(tabLayout.newTab().setText("Home"));
-         tabLayout.addTab(tabLayout.newTab().setText("Google"));
-         tabLayout.addTab(tabLayout.newTab().setText("Bing"));
-         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+          tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
 
 
          viewPager = (ViewPager) findViewById(R.id.viewpager);
+
 
 
          setupViewPager(viewPager);
@@ -151,9 +140,9 @@ public class Home extends AppCompatActivity {
     }
 
 
- public void setCurrentHome()
+ public void setFragmentId(int fragmentId)
  {
-     viewPager.setCurrentItem(0);
+     viewPager.setCurrentItem(fragmentId);
  }
 
 

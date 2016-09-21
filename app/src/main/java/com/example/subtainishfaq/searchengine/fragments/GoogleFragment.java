@@ -40,7 +40,7 @@ public class GoogleFragment extends Fragment {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if (keyCode == KeyEvent.KEYCODE_BACK &&  event.getAction() == KeyEvent.ACTION_UP) {
-                    ((Home) getActivity()).setCurrentHome();
+                    ((Home) getActivity()).setFragmentId(0);
 
                     return true;
                 }

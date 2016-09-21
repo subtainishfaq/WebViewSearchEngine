@@ -43,7 +43,7 @@ public class BingFragment extends Fragment {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if (keyCode == KeyEvent.KEYCODE_BACK) {
-                    ((Home) getActivity()).setCurrentHome();
+                    ((Home) getActivity()).setFragmentId(0);
                     return true;
                 }
                 return false;
