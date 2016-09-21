@@ -5,18 +5,4 @@
     android:layout_height="match_parent">
 
 
-    <GridView
-        android:id="@+id/gridViewfav"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:columnWidth="100dp"
-        android:drawSelectorOnTop="true"
-        android:gravity="center"
-        android:numColumns="2"
-        android:horizontalSpacing="5dp"
-
-        android:stretchMode="columnWidth"
-        android:verticalSpacing="5dp"
-        android:focusable="true"
-        android:clickable="true"/>
 </LinearLayout>

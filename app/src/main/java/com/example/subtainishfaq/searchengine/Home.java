@@ -26,7 +26,7 @@ public class Home extends AppCompatActivity {
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
-    private CustomViewPager viewPager;
+    private ViewPager viewPager;
     private HomeFragment homefrag;
     private GoogleFragment catfrag;
     private BingFragment favfrag;
@@ -65,22 +65,36 @@ public class Home extends AppCompatActivity {
          ab.setDisplayShowTitleEnabled(false);
          ab.setHideOnContentScrollEnabled(false);//
 
-         viewPager = (CustomViewPager) findViewById(R.id.viewpager);
-         viewPager.setPagingEnabled(false);
+         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+         tabLayout.addTab(tabLayout.newTab().setText("Home"));
+         tabLayout.addTab(tabLayout.newTab().setText("Google"));
+         tabLayout.addTab(tabLayout.newTab().setText("Bing"));
+         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+
+         viewPager = (ViewPager) findViewById(R.id.viewpager);
+
+
          setupViewPager(viewPager);
 
 
 
 
-     }
-    private void setupViewPager(ViewPager viewPager) {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(homefrag, getString(R.string.tab_home));
-        adapter.addFragment(catfrag, getString(R.string.tab_categories));
-        adapter.addFragment(favfrag, getString(R.string.tab_favourites));
-        viewPager.setAdapter(adapter);
 
-    }
+
+     }
+    private void setupViewPager(final ViewPager viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(homefrag, "Home");
+        adapter.addFragment(catfrag, "Google");
+        adapter.addFragment(favfrag, "Bing");
+        viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.setupWithViewPager(viewPager);
+
+
+
+}
 
 
 
@@ -109,6 +123,8 @@ public class Home extends AppCompatActivity {
             mFragmentList.add(fragment);
             mFragmentTitleList.add(title);
         }
+
+
 
         @Override
         public CharSequence getPageTitle(int position) {
