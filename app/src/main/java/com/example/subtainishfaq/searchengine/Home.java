@@ -13,8 +13,6 @@ import android.support.v7.widget.Toolbar;
 import com.example.subtainishfaq.searchengine.fragments.GoogleFragment;
 import com.example.subtainishfaq.searchengine.fragments.BingFragment;
 import com.example.subtainishfaq.searchengine.fragments.HomeFragment;
-import com.example.subtainishfaq.searchengine.utility.CustomViewPager;
-
 
 
 import java.util.ArrayList;
@@ -65,7 +63,7 @@ public class Home extends AppCompatActivity {
          ab.setDisplayShowTitleEnabled(false);
          ab.setHideOnContentScrollEnabled(false);//
 
-         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+          tabLayout = (TabLayout) findViewById(R.id.tab_layout);
          tabLayout.addTab(tabLayout.newTab().setText("Home"));
          tabLayout.addTab(tabLayout.newTab().setText("Google"));
          tabLayout.addTab(tabLayout.newTab().setText("Bing"));

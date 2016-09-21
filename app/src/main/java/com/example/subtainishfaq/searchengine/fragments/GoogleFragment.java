@@ -19,7 +19,6 @@ public class GoogleFragment extends Fragment {
 
 
 
-  int countback=0;
 
     public GoogleFragment() {
         // Required empty public constructor
