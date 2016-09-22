@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import com.example.subtainishfaq.searchengine.fragments.GoogleFragment;
 import com.example.subtainishfaq.searchengine.fragments.BingFragment;
 import com.example.subtainishfaq.searchengine.fragments.HomeFragment;
+import com.example.subtainishfaq.searchengine.fragments.Settings;
 
 
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ public class Home extends AppCompatActivity {
     private HomeFragment homefrag;
     private GoogleFragment catfrag;
     private BingFragment favfrag;
+    private Settings settingsfraf;
 
 
     @Override
@@ -49,6 +51,7 @@ public class Home extends AppCompatActivity {
          homefrag=  new HomeFragment();
          catfrag= new GoogleFragment();
          favfrag= new BingFragment();
+         settingsfraf= new Settings();
 
 
 
@@ -75,6 +78,7 @@ public class Home extends AppCompatActivity {
         adapter.addFragment(homefrag, "Home");
         adapter.addFragment(catfrag, "Google");
         adapter.addFragment(favfrag, "Bing");
+        adapter.addFragment(settingsfraf, "Settings");
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setupWithViewPager(viewPager);
