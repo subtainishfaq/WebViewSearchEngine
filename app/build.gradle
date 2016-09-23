@@ -41,5 +41,7 @@ dependencies {
     compile 'com.google.android.gms:play-services-location:9.4.0'
     compile 'com.jakewharton:disklrucache:2.0.2'
     compile 'com.android.support:support-v4:24.2.1'
+    compile 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'
+
     testCompile 'junit:junit:4.12'
 }

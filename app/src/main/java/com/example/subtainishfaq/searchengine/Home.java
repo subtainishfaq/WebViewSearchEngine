@@ -10,6 +10,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
+
+import com.ToxicBakery.viewpager.transforms.CubeInTransformer;
+import com.ToxicBakery.viewpager.transforms.RotateUpTransformer;
 import com.example.subtainishfaq.searchengine.fragments.GoogleFragment;
 import com.example.subtainishfaq.searchengine.fragments.BingFragment;
 import com.example.subtainishfaq.searchengine.fragments.HomeFragment;
@@ -75,6 +78,8 @@ public class Home extends AppCompatActivity {
      }
     private void setupViewPager(final ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        viewPager.setPageTransformer(true, new CubeInTransformer());
+
         adapter.addFragment(homefrag, "Home");
         adapter.addFragment(catfrag, "Google");
         adapter.addFragment(favfrag, "Bing");
@@ -82,6 +87,12 @@ public class Home extends AppCompatActivity {
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setupWithViewPager(viewPager);
+     //   for (int i = 0; i < tabLayout.getTabCount(); i++) {
+            tabLayout.getTabAt(0).setIcon(R.drawable.home);
+            tabLayout.getTabAt(1).setIcon(R.drawable.google);
+            tabLayout.getTabAt(2).setIcon(R.drawable.bing);
+            tabLayout.getTabAt(2).setIcon(R.drawable.settings);
+       // }
 
 
 
