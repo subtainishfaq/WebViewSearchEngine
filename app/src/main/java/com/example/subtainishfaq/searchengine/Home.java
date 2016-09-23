@@ -91,7 +91,7 @@ public class Home extends AppCompatActivity {
             tabLayout.getTabAt(0).setIcon(R.drawable.home);
             tabLayout.getTabAt(1).setIcon(R.drawable.google);
             tabLayout.getTabAt(2).setIcon(R.drawable.bing);
-            tabLayout.getTabAt(2).setIcon(R.drawable.settings);
+            tabLayout.getTabAt(3).setIcon(R.drawable.settings);
        // }
 
 
